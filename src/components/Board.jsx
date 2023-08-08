@@ -1,8 +1,15 @@
 import Square from "./Square";
 
-const Board = ({ square, handleClick }) => {
+const Board = ({ square, handleClick, winningSquare }) => {
   const renderSquare = (index) => {
-    return <Square value={square[index]} onClick={() => handleClick(index)} />;
+    const isWinningSquare = winningSquare.includes(index);
+    return (
+      <Square
+        value={square[index]}
+        onClick={() => handleClick(index)}
+        isWinningSquare={isWinningSquare}
+      />
+    );
   };
   return (
     <div className="board">
