@@ -11,7 +11,7 @@ export const calculatewinner = (square) => {
   ];
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
-    if (square[a] === square[b] && square[a] === square[c]) {
+    if (square[a] && square[a] === square[b] && square[a] === square[c]) {
       return square[a];
     }
   }
